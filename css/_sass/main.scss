@@ -1,0 +1,11 @@
+@charset "utf-8";
+@import "_config.scss";
+
+@import "base.scss";
+
+#app{
+    .page{
+        border: 1px solid red;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,20 @@
+@function rem($size)
+  @return 0rem + $size / 16
+
+@function r($size)
+  @return 0rem + $size / 32
+
+@function relative-size($rota)
+  @return $base-size * $rota
+
+@function img-url($img, $path:'')
+  @if $path != ''
+    @return url("#{$path}/#{$img}?v=#{$CVS}")
+  @else
+    @return url("#{$IMGURL}/#{$img}?v=#{$CVS}")
+
+@function u($img, $path:'')
+  @if $path != ''
+    @return url(#{$path}/#{$img}?v=#{$CVS})
+  @else
+    @return url(#{$IMGURL}/#{$img}?v=#{$CVS})
