@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <script>document.querySelector('html').style.fontSize = (document.body.clientWidth / 320 * 16 + 'px');</script>
+    <div id="loading"></div>
     <div id="app">
       <router-view></router-view>
     </div>
-    <script data-main="js/config" src="http://requirejs.org/docs/release/2.1.20/minified/require.js"></script>
+    <script data-main="js/config" src="js/lib/requirejs.min.js"></script>
 </body>
 </html>

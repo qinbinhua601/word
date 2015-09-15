@@ -15,6 +15,7 @@ var gulp        = require('gulp'),
     browserSync = require('browser-sync').create(),
     jade        = require('gulp-jade'),
     path        = require('path'),
+    px2rem      = require('gulp-px2rem'),
     wrap        = require('gulp-wrap-amd');
 
 var paths = {
@@ -56,6 +57,9 @@ gulp.task('sass', function() {
     .on('error', function (err) {
       console.error('Error!', err.message);
     })
+    .pipe(px2rem({
+        replace: true
+    }))
     .pipe(prefix('ios 6', 'android  4'))
     .pipe(gulp.dest(output.css));
 });

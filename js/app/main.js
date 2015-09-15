@@ -1,17 +1,14 @@
-define(["vue", 'vue-router'], function(Vue, VueRouter) {
-    Vue.use(VueRouter);
-    var router = new VueRouter();
+define(["zepto", "vue", 'vue-router', 'vm/index', 'vm/foo', 'vm/bar'], function($, Vue, VueRouter, Index, Foo, Bar) {
 
+    $('#loading').hide()
 
-    var Foo = Vue.extend({
-        template: '<div class="page">this is page 1</div>'
-    })
-
-    var Bar = Vue.extend({
-        template: '<div class="page">this is page 2</div>'
-    })
+    Vue.use(VueRouter)
+    var router = new VueRouter()
 
     router.map({
+        '/': {
+            component: Index
+        },
         '/foo': {
             component: Foo
         },
@@ -20,6 +17,13 @@ define(["vue", 'vue-router'], function(Vue, VueRouter) {
         },
     })
 
+    vData = {
+        msg : 'qinbinhua'
+    }
 
-    router.start({}, '#app')
-});
+
+
+    router.start(new Vue({
+        data : vData
+    }) , '#app')
+})

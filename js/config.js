@@ -1,11 +1,13 @@
 // requirejs config
 requirejs.config({
-    baseUrl: "js/lib",
+    baseUrl: ".",
     paths: {
-        "app": "../app",
-        "zepto" : ["http://zeptojs.com/zepto.min" ,"../lib/zepto.min"],
-        "vue" : "http://cdn.jsdelivr.net/vue/0.12.10/vue",
-        "vue-router" : "http://rawgit.com/vuejs/vue-router/dev/dist/vue-router"
+        "app": "js/app",
+        "vm": "modules",
+        "zepto" : "js/lib/zepto.min",
+        "vue" : "js/lib/vue_1213.min",
+        "vue-router" : "js/lib/vue-router.min",
+        "text": "js/lib/text"
     },
     shim:{
         zepto: {
@@ -13,5 +15,5 @@ requirejs.config({
         }
     }
 });
-// load the main.js 
+// load the main.js
 requirejs(["app/main"]);
