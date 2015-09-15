@@ -21,8 +21,6 @@ define(["zepto", "vue", 'vue-router', 'vm/index', 'vm/foo', 'vm/bar'], function(
         msg : 'qinbinhua'
     }
 
-
-
     router.start(new Vue({
         data : vData
     }) , '#app')
